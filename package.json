@@ -1,0 +1,23 @@
+{
+  "name": "library",
+  "version": "1.0.0",
+  "description": "This is an evolving template repository for my TOP projects.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raineedust/library.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raineedust/library/issues"
+  },
+  "homepage": "https://github.com/raineedust/library#readme",
+  "dependencies": {
+    "modern-normalize": "^1.1.0"
+  }
+}
