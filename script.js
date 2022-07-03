@@ -1,17 +1,50 @@
-const myLibrary = [];
+const myLibrary = [
+  {
+    title: "The Hobbit",
+    author: "J.R.R. Tolkien",
+    pages: 295,
+    readStatus: "unread",
+  },
+];
 
-function Book(title, author, pages, status) {
+function Book(title, author, pages, readStatus) {
   this.title = title;
   this.author = author;
   this.pages = pages;
-  this.status = status;
+  this.readStatus = readStatus;
 }
 
-function addToLibrary() {}
+// Form validation + Add books
 
-Book.prototype.bookInfo = function () {
-  return `${this.title} by ${this.author}, ${this.pages} pages, ${this.status}.`;
-};
+const addBook = document.querySelector("#add-book");
 
-const theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", "295", "unread");
-console.log(theHobbit.bookInfo());
+function addToLibrary(title, author, pages, readStatus) {
+  const book = new Book(title, author, pages, readStatus);
+  myLibrary.push(book);
+  console.log(book);
+  console.log(myLibrary);
+}
+
+function formVal() {
+  const title = document.querySelector("#title").value;
+  const author = document.querySelector("#author").value;
+  const pages = document.querySelector("#pages").value;
+
+  if (title !== "" && author !== "" && pages.match(/[^1-9]/)) {
+    if (document.querySelector("#readStatus").checked) {
+      const readStatus = "read";
+      addToLibrary(title, author, pages, readStatus);
+    } else {
+      const readStatus = "unread";
+      addToLibrary(title, author, pages, readStatus);
+    }
+  } else {
+    alert("Please enter the details correctly!");
+  }
+}
+
+// How to route title, author, pages, readStatus to addBook
+
+addBook.addEventListener("click", () => {
+  formVal();
+});
