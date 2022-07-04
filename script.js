@@ -3,7 +3,7 @@ const myLibrary = [
     title: "The Hobbit",
     author: "J.R.R. Tolkien",
     pages: 295,
-    readStatus: "unread",
+    readStatus: "Unread",
   },
 ];
 
@@ -21,9 +21,7 @@ const addBook = document.querySelector("#add-book");
 function addToLibrary(title, author, pages, readStatus) {
   const book = new Book(title, author, pages, readStatus);
   myLibrary.push(book);
-  displayBook();
   console.log(book);
-  console.log(myLibrary);
 }
 
 function formVal() {
@@ -37,13 +35,14 @@ function formVal() {
     pages.match(/^([1-9][0-9][0-9]?|1000)$/)
   ) {
     if (document.querySelector("#readStatus").checked) {
-      const readStatus = "read";
+      const readStatus = "Read";
       addToLibrary(title, author, pages, readStatus);
     } else {
-      const readStatus = "unread";
+      const readStatus = "Unread";
       addToLibrary(title, author, pages, readStatus);
     }
     document.querySelector("form").reset();
+    displayBook();
   } else {
     alert("Please enter the details correctly!");
   }
@@ -56,16 +55,29 @@ addBook.addEventListener("click", () => {
 // Display UI
 
 function displayBook() {
-  const table = document.querySelector(".table");
-  const row = table.insertRow(1);
-  const cell1 = row.insertCell(0);
-  const cell2 = row.insertCell(1);
-  const cell3 = row.insertCell(2);
-  const cell4 = row.insertCell(3);
-  cell1.textContent = "NEW CELL1";
-  cell2.textContent = "NEW CELL2";
-  cell3.textContent = "NEW CELL3";
-  cell4.textContent = "NEW CELL4";
+  const bookList = document.querySelector(".table-body");
+
+  for (let i = 0; i < myLibrary.length; i += 1) {
+    const bookRow = document.createElement("tr");
+    bookRow.classList.add("book-info");
+    bookList.appendChild(bookRow);
+
+    const bookTitle = document.createElement("td");
+    bookTitle.textContent = myLibrary[i].title;
+    bookRow.appendChild(bookTitle);
+
+    const bookAuthor = document.createElement("td");
+    bookAuthor.textContent = myLibrary[i].author;
+    bookRow.appendChild(bookAuthor);
+
+    const bookPages = document.createElement("td");
+    bookPages.textContent = myLibrary[i].pages;
+    bookRow.appendChild(bookPages);
+
+    const bookStatus = document.createElement("td");
+    bookStatus.textContent = myLibrary[i].readStatus;
+    bookRow.appendChild(bookStatus);
+  }
 }
 
 myLibrary.forEach(displayBook);
