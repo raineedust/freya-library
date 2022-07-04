@@ -1,8 +1,8 @@
 const myLibrary = [
   {
-    title: "The Hobbit",
-    author: "J.R.R. Tolkien",
-    pages: 295,
+    title: "Norse Mythology",
+    author: "Neil Gaiman",
+    pages: 301,
     readStatus: "Unread",
   },
 ];
@@ -14,6 +14,45 @@ function Book(title, author, pages, readStatus) {
   this.readStatus = readStatus;
 }
 
+// Display UI
+
+function displayBook() {
+  const bookList = document.querySelector(".table-body");
+  bookList.textContent = "";
+
+  for (let i = 0; i < myLibrary.length; i += 1) {
+    const bookRow = document.createElement("tr");
+    bookRow.classList.add("book-info");
+    bookList.appendChild(bookRow);
+
+    const bookTitle = document.createElement("td");
+    bookTitle.textContent = myLibrary[i].title;
+    bookRow.appendChild(bookTitle);
+
+    const bookAuthor = document.createElement("td");
+    bookAuthor.textContent = myLibrary[i].author;
+    bookRow.appendChild(bookAuthor);
+
+    const bookPages = document.createElement("td");
+    bookPages.textContent = myLibrary[i].pages;
+    bookRow.appendChild(bookPages);
+
+    // Book Status
+    const bookStatus = document.createElement("td");
+    const statusIcon = document.createElement("i");
+    bookStatus.textContent = myLibrary[i].readStatus;
+    if (myLibrary[i].readStatus === "Read") {
+      statusIcon.classList.add("fa-solid", "fa-circle-check");
+    } else {
+      statusIcon.classList.add("fa-solid", "fa-circle-xmark");
+    }
+    bookStatus.appendChild(statusIcon);
+    bookRow.appendChild(bookStatus);
+  }
+}
+
+myLibrary.forEach(displayBook);
+
 // Form validation + Add books
 
 const addBook = document.querySelector("#add-book");
@@ -21,7 +60,6 @@ const addBook = document.querySelector("#add-book");
 function addToLibrary(title, author, pages, readStatus) {
   const book = new Book(title, author, pages, readStatus);
   myLibrary.push(book);
-  console.log(book);
 }
 
 function formVal() {
@@ -51,34 +89,3 @@ function formVal() {
 addBook.addEventListener("click", () => {
   formVal();
 });
-
-// Display UI
-
-function displayBook() {
-  const bookList = document.querySelector(".table-body");
-  bookList.textContent = "";
-
-  for (let i = 0; i < myLibrary.length; i += 1) {
-    const bookRow = document.createElement("tr");
-    bookRow.classList.add("book-info");
-    bookList.appendChild(bookRow);
-
-    const bookTitle = document.createElement("td");
-    bookTitle.textContent = myLibrary[i].title;
-    bookRow.appendChild(bookTitle);
-
-    const bookAuthor = document.createElement("td");
-    bookAuthor.textContent = myLibrary[i].author;
-    bookRow.appendChild(bookAuthor);
-
-    const bookPages = document.createElement("td");
-    bookPages.textContent = myLibrary[i].pages;
-    bookRow.appendChild(bookPages);
-
-    const bookStatus = document.createElement("td");
-    bookStatus.textContent = myLibrary[i].readStatus;
-    bookRow.appendChild(bookStatus);
-  }
-}
-
-myLibrary.forEach(displayBook);
