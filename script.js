@@ -42,12 +42,20 @@ function displayBook() {
     const statusIcon = document.createElement("i");
     bookStatus.textContent = myLibrary[i].readStatus;
     if (myLibrary[i].readStatus === "Read") {
-      statusIcon.classList.add("fa-solid", "fa-circle-check");
+      statusIcon.classList.add("fa-solid", "fa-book-open-reader");
     } else {
-      statusIcon.classList.add("fa-solid", "fa-circle-xmark");
+      statusIcon.classList.add("fa-solid", "fa-book-open");
     }
-    bookStatus.appendChild(statusIcon);
     bookRow.appendChild(bookStatus);
+    bookStatus.appendChild(statusIcon);
+
+    // Book Controls
+    const bookRemove = document.createElement("td");
+    const removeIcon = document.createElement("i");
+    removeIcon.classList.add("fa-solid", "fa-trash-can");
+    bookRemove.textContent = "Remove This Book";
+    bookRow.appendChild(bookRemove);
+    bookRemove.appendChild(removeIcon);
   }
 }
 
