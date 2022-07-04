@@ -43,8 +43,6 @@ function formVal() {
   }
 }
 
-// How to route title, author, pages, readStatus to addBook
-
 addBook.addEventListener("click", () => {
   formVal();
 });
