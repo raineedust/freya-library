@@ -2,7 +2,7 @@
 
 This is Freya's Library, a place where you can manage and store your books.
 
-![](./assets/chrome_ir3L7.png)
+![](./assets/chrome_hinFJ.png)
 
 ## Live Preview
 

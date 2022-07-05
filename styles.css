@@ -8,6 +8,7 @@
   --border: 3px #c8c8c8 solid;
   --background: hsl(228, 29%, 26%);
   --accent: hsl(227, 27%, 34%);
+  --action-spacing: 0.15rem;
 
   /* Not variables */
   list-style: none;
@@ -32,18 +33,20 @@ a {
 .trash:after {
   content: " Remove this Book";
   cursor: pointer;
-  text-transform: capitalize;
+  letter-spacing: var(--action-spacing);
+  line-height: 1.4rem;
 }
 
 .unread:after {
   content: " Unread";
   cursor: pointer;
-  text-transform: capitalize;
+  letter-spacing: var(--action-spacing);
 }
 
 .read:after {
   content: " Read";
   cursor: pointer;
+  letter-spacing: var(--action-spacing);
 }
 
 /* Non-Global */
@@ -153,7 +156,7 @@ table td {
 
 td,
 th {
-  padding: 20px 20px 20px 20px;
+  padding: 20px 26px 20px 26px;
 }
 
 th {
