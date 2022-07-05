@@ -15,6 +15,7 @@ This project is hosted on **GitHub Pages**. Feel free to [:point_right: try it o
 - [ ] Implement input UI and logic
 - [ ] Implement deletion UI and logic
 - [ ] Implement read status switching logic
+- [ ] Follow ESLint rules
 
 ## Limitations
 

@@ -14,6 +14,20 @@
   --goo-hov-shadow: 0 4px 12px rgb(23 23 23 / 90%); */
 }
 
+.fa-trash-can {
+  cursor: pointer;
+}
+
+.unread:after {
+  content: " Unread";
+  cursor: pointer;
+}
+
+.read:after {
+  content: " Read";
+  cursor: pointer;
+}
+
 table {
   border-collapse: collapse;
   border: 2px solid rgb(200, 200, 200);

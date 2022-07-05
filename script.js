@@ -40,26 +40,61 @@ function displayBook() {
     // Book Status
     const bookStatus = document.createElement("td");
     const statusIcon = document.createElement("i");
-    bookStatus.textContent = myLibrary[i].readStatus;
+    // UNCOMMENT ONCE read/unread ISSUE IS FIXED
+    // bookStatus.textContent = myLibrary[i].readStatus;
     if (myLibrary[i].readStatus === "Read") {
       statusIcon.classList.add("fa-solid", "fa-book-open-reader");
-    } else {
+    } else if (myLibrary[i].readStatus === "Unread") {
       statusIcon.classList.add("fa-solid", "fa-book-open");
     }
     bookRow.appendChild(bookStatus);
     bookStatus.appendChild(statusIcon);
 
-    // Book Controls
+    // Book Removal
     const bookRemove = document.createElement("td");
     const removeIcon = document.createElement("i");
     removeIcon.classList.add("fa-solid", "fa-trash-can");
-    bookRemove.textContent = "Remove This Book";
+    bookRemove.textContent = "Remove This Book ";
     bookRow.appendChild(bookRemove);
     bookRemove.appendChild(removeIcon);
   }
 }
 
 myLibrary.forEach(displayBook);
+
+// Book Controls
+
+function bookControls() {
+  document.addEventListener("click", (e) => {
+    const { target } = e;
+    const editRow = document.querySelector(".book-info");
+
+    for (let i = 0; i < myLibrary.length; i += 1) {
+      // Book Removal
+      if (target.classList.contains("fa-trash-can")) {
+        myLibrary.splice(editRow, 1);
+        displayBook();
+      }
+
+      // Book Status
+      else if (target.classList.contains("fa-book-open")) {
+        myLibrary[i].readStatus = "Read";
+        target.classList.add("fa-book-open-reader");
+        target.classList.add("read");
+        target.classList.remove("unread");
+        target.classList.remove("fa-book-open");
+      } else if (target.classList.contains("fa-book-open-reader")) {
+        myLibrary[i].readStatus = "Unread";
+        target.classList.add("fa-book-open");
+        target.classList.add("unread");
+        target.classList.remove("read");
+        target.classList.remove("fa-book-open-reader");
+      }
+    }
+  });
+}
+
+bookControls();
 
 // Form validation + Add books
 
