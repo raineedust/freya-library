@@ -6,7 +6,7 @@ This is Freya's Library, a place where you can manage and store your books.
 
 ## Live Preview
 
-This project is hosted on **GitHub Pages**. Feel free to [:point_right: try it out](https://raineedust.github.io/library/)!
+This project is hosted on **GitHub Pages**. Feel free to [:point_right: try it out](https://raineedust.github.io/freya-library/)!
 
 ## Motivation and Goals
 
