@@ -18,9 +18,13 @@
     ></script>
   </head>
   <body>
-    <header></header>
     <main>
-      <section class="formContainer">
+      <section class="form-container">
+        <header>
+          <div>
+            <img src="assets/book-logo.png" alt="logo" />Freya's Library
+          </div>
+        </header>
         <form action="">
           <li>
             <input type="text" name="title" id="title" placeholder="Title" />
@@ -31,13 +35,22 @@
           <li>
             <input type="number" name="pages" id="pages" placeholder="Pages" />
           </li>
-          <li>
-            <input type="checkbox" name="readStatus" id="readStatus" /><span>
-              I have read the book.</span
-            >
+          <li class="check">
+            <input type="checkbox" name="readStatus" id="readStatus" />
+            <span> I have read the book.</span>
           </li>
           <input type="button" value="Add Book to Library" id="add-book" />
         </form>
+        <div class="space"></div>
+        <footer>
+          <div>
+            Copyright ©
+            <a href="https://github.com/raineedust" target="_blank"
+              >Tan Jin Yi</a
+            >
+            2022
+          </div>
+        </footer>
       </section>
 
       <section class="book-display">
@@ -57,6 +70,5 @@
         </table>
       </section>
     </main>
-    <footer></footer>
   </body>
 </html>

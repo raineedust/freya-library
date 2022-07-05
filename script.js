@@ -3,6 +3,18 @@ const myLibrary = [
     title: "Norse Mythology",
     author: "Neil Gaiman",
     pages: 301,
+    readStatus: "Read",
+  },
+  {
+    title: "And Then There Were None",
+    author: "Agatha Christie",
+    pages: 264,
+    readStatus: "Read",
+  },
+  {
+    title: "The Hobbit",
+    author: "J.R.R. Tolkien",
+    pages: 295,
     readStatus: "Unread",
   },
 ];

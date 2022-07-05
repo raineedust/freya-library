@@ -1,25 +1,26 @@
 # TOP Template
 
-This is an evolving template repository for my TOP projects.
+This is Freya's Library, a place where you can manage and store your books.
 
-![]()
+![](./assets/chrome_ir3L7.png)
 
 ## Live Preview
 
-This project is hosted on **GitHub Pages**. Feel free to [:point_right: try it out]()!
+This project is hosted on **GitHub Pages**. Feel free to [:point_right: try it out](https://raineedust.github.io/library/)!
 
 ## Motivation and Goals
 
-- [ ] Implement semantic HTML
-- [ ] Implement book display UI and logic
-- [ ] Implement input UI and logic
-- [ ] Implement deletion UI and logic
-- [ ] Implement read status switching logic
-- [ ] Follow ESLint rules
+- [x] Implement semantic HTML
+- [x] Implement book display UI and logic
+- [x] Implement input UI and logic
+- [x] Implement deletion UI and logic
+- [x] Implement read status switching logic
+- [x] Follow ESLint rules
+- [x] Make it pretty!
 
 ## Limitations
 
--
+- None, as all the requirements of this project were met.
 
 ## Resources
 
@@ -30,6 +31,12 @@ Below are a collection of resources which helped improve my skills :sparkles: wh
 - [Semantic HTML5 Elements Explained](https://www.freecodecamp.org/news/semantic-html5-elements/)
 - [JavaScript Array forEach() Method](https://www.w3schools.com/jsref/jsref_foreach.asp)
 - [HTML DOM Table insertRow() Method](https://www.w3schools.com/jsref/met_table_insertrow.asp)
+- [javascript - Finding index of the parent node - Stack Overflow](https://stackoverflow.com/questions/23337891/finding-index-of-the-parent-node)
+- [html - Using CSS to insert text - Stack Overflow](https://stackoverflow.com/questions/2741312/using-css-to-insert-text)
+- [HTML DOM Element classList Property](https://www.w3schools.com/jsref/prop_element_classlist.asp)
+- [javascript - ".addEventListener is not a function" why does this error occur? - Stack Overflow](https://stackoverflow.com/questions/32027935/addeventlistener-is-not-a-function-why-does-this-error-occur)
+- [jquery - How to reset (clear) form through JavaScript? - Stack Overflow](https://stackoverflow.com/questions/3786694/how-to-reset-clear-form-through-javascript)
+- [css - How to justify a single flexbox item (override justify-content) - Stack Overflow](https://stackoverflow.com/questions/23621650/how-to-justify-a-single-flexbox-item-override-justify-content)
 
 Built with :heart: to **The Odin Project**, a wonderful Web Development curriculum ~
 
