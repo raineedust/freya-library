@@ -40,12 +40,13 @@ function displayBook() {
     // Book Status
     const bookStatus = document.createElement("td");
     const statusIcon = document.createElement("i");
-    // UNCOMMENT ONCE read/unread ISSUE IS FIXED
+
+    // textContent partially not working, substituted with CSS class content.
     // bookStatus.textContent = myLibrary[i].readStatus;
     if (myLibrary[i].readStatus === "Read") {
-      statusIcon.classList.add("fa-solid", "fa-book-open-reader");
+      statusIcon.classList.add("fa-solid", "fa-book-open-reader", "read");
     } else if (myLibrary[i].readStatus === "Unread") {
-      statusIcon.classList.add("fa-solid", "fa-book-open");
+      statusIcon.classList.add("fa-solid", "fa-book-open", "unread");
     }
     bookRow.appendChild(bookStatus);
     bookStatus.appendChild(statusIcon);
@@ -53,8 +54,10 @@ function displayBook() {
     // Book Removal
     const bookRemove = document.createElement("td");
     const removeIcon = document.createElement("i");
-    removeIcon.classList.add("fa-solid", "fa-trash-can");
-    bookRemove.textContent = "Remove This Book ";
+    removeIcon.classList.add("fa-solid", "fa-trash-can", "trash");
+
+    // textContent partially not working, substituted with CSS class content.
+    // bookRemove.textContent = "Remove This Book ";
     bookRow.appendChild(bookRemove);
     bookRemove.appendChild(removeIcon);
   }
@@ -67,7 +70,7 @@ myLibrary.forEach(displayBook);
 function bookControls() {
   document.addEventListener("click", (e) => {
     const { target } = e;
-    const editRow = document.querySelector(".book-info");
+    const editRow = target.parentNode.parentNode.rowIndex - 1;
 
     for (let i = 0; i < myLibrary.length; i += 1) {
       // Book Removal

@@ -18,6 +18,11 @@ i {
   cursor: pointer;
 }
 
+.trash:after {
+  content: " Remove this Book";
+  cursor: pointer;
+}
+
 .unread:after {
   content: " Unread";
   cursor: pointer;
