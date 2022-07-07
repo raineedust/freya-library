@@ -1,4 +1,4 @@
-# TOP Template
+# Freya's Library
 
 This is Freya's Library, a place where you can manage and store your books.
 
